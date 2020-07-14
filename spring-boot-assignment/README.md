@@ -1,9 +1,30 @@
-# Spring Boot upload Multiple Files example - Multipart File
+# Spring Boot web Application
 
-For more detail, please visit:
-> [Spring Boot Multiple Files upload example](https://bezkoder.com/spring-boot-upload-multiple-files/)
+
 
 ## Run Spring Boot application
 ```
 mvn spring-boot:run
+
 ```
+## Login credential
+```
+user: user
+password: password
+
+```
+
+## Url to Access Temp converter
+```
+localhost:8080/temperature
+
+```
+
+## Url to Access Upload File
+```
+localhost:8080/file/fileUplaod
+
+```
+
+
+
