@@ -20,7 +20,7 @@ public class ContactDetailEntity {
 	private Long id;
 
 	@NotNull
-	private long contactNumber;
+	private int contactNumber;
 	private int status;
 
 	public ContactDetailEntity() {
@@ -34,11 +34,11 @@ public class ContactDetailEntity {
 		this.id = id;
 	}
 
-	public long getContactNumber() {
+	public int getContactNumber() {
 		return contactNumber;
 	}
 
-	public void setContactNumber(long contactNumber) {
+	public void setContactNumber(int contactNumber) {
 		this.contactNumber = contactNumber;
 	}
 

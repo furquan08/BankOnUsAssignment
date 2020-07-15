@@ -33,7 +33,7 @@ public class CustomerController {
 	private CustomerService customerService;
 
 	@GetMapping(path = "/customer/getAllPhone", produces = "application/json")
-	private ResponseEntity<List<Customer>> getAllPhone() {
+	public ResponseEntity<List<Customer>> getAllPhone() {
 		List<Customer> list = customerService.getAllCustomers();
 		if (list == null || list.isEmpty()) {
 			throw new RecordNotFoundException("No data present:");
@@ -42,7 +42,7 @@ public class CustomerController {
 	}
 
 	@GetMapping(path = "/customer/{id}", produces = "application/json")
-	private ResponseEntity<Customer> getCustomer(@PathVariable Long id) {
+	public ResponseEntity<Customer> getCustomer(@PathVariable Long id) {
 		Customer entity = customerService.getCustomer(id);
 		if (entity == null) {
 			throw new RecordNotFoundException("Invalid customer id : " + id);
@@ -53,7 +53,7 @@ public class CustomerController {
 	}
 
 	@PostMapping(path = "/customer/activateNumnber", consumes = "application/json", produces = "application/json")
-	private ResponseEntity<ContactDetailEntity> activateCustomerNumber(@Valid @RequestBody CustomerDTO customerDTO) {
+	public ResponseEntity<ContactDetailEntity> activateCustomerNumber(@Valid @RequestBody CustomerDTO customerDTO) {
 		ContactDetailEntity entity = customerService.activateNumber(customerDTO);
 		if (entity == null) {
 			throw new RecordNotFoundException("Invalid customer id : " + customerDTO.getCustId() +"or number "+customerDTO.getContactNumber());
