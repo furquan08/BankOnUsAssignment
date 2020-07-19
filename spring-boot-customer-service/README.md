@@ -8,6 +8,13 @@ mvn spring-boot:run
 
 ```
 
+## Api Doc
+```
+url:http://localhost:8090/swagger-ui.html
+
+```
+
+
 
 
 ## Api Request

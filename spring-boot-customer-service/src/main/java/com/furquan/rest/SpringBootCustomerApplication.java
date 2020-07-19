@@ -11,13 +11,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.furquan.rest.dao.CustomerRepository;
 import com.furquan.rest.model.ContactDetailEntity;
-import com.furquan.rest.model.Customer; 
+import com.furquan.rest.model.Customer;
+
+import springfox.documentation.swagger2.annotations.EnableSwagger2; 
 
 /**
  * @author furquan
  *
  */
 @SpringBootApplication 
+@EnableSwagger2
 public class SpringBootCustomerApplication {
 	
 	 @Autowired
