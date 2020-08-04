@@ -18,11 +18,16 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests().antMatchers("/hello/*", "/file/*","/temperature")
-		.access("hasRole('ROLE_ADMIN')").and().formLogin();
+		http.authorizeRequests()
+		.antMatchers("/h2-console/**").permitAll().and().
+		authorizeRequests().antMatchers("/hello/*", "/file/*","/temperature")
+		.access("hasRole('ADMIN')").and().formLogin();
+		http.csrf().disable();
+		http.headers().frameOptions().disable();
 		
 	}
 
+	
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().passwordEncoder(NoOpPasswordEncoder.getInstance()).
